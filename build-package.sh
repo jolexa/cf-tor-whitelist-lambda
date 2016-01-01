@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ -z $1 ]]; then
+  echo "Exiting, Please supply the bucket name with the secrets as the first argument"
+  exit 1
+fi
+
 DIR=$(mktemp -d)
 cd $DIR
 
