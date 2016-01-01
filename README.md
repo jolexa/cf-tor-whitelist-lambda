@@ -9,7 +9,7 @@ AWS Lambda function to whitelist Tor Exit relays via CloudFlare's API. Uses Donn
 ## Ideology
 The idea of this repo is to build a zip package that you can deploy to AWS Lambda. The lambda function fires on a scheduled event, (eg, Daily). Basically, we are using AWS Lambda as a cron daemon.
 
-I was thinking aobut storing the secret data in AWS DynamoDB, but that was more expensive than I wanted to spend on this.
+I was thinking about storing the secret data in AWS DynamoDB, but that was more expensive than I wanted to spend on this.
 
 Ultimately, I choose to store the CloudFlare secret in a encrypted at rest object on S3 because it was easy and it makes this function re-usable for others instead of hardcoding some credentials and not sharing the function. Ideally, the object would be protected by AWS KMS as well, but that costs more than I wanted to spend on this.
 
