@@ -12,7 +12,7 @@ wget https://raw.githubusercontent.com/jolexa/cf-tor-whitelist-lambda/master/mai
 
 # Have to hardcode the bucket name for secrets. TODO, this is not ideal but it
 # works for now
-sed -e -i "s/BUCKETNAME/$1/" main.py
+sed -i -e "s/BUCKETNAME/$1/" main.py
 
 # create zip
 zip -r9 /tmp/cf-tor-whitelist-lambda.zip *
